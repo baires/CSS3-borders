@@ -1,0 +1,66 @@
+/****	Imports	***/ 
+
+@import "compass/css3/gradient";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+
+/****	Defaults	***/ 
+$background: #ffd73a !default;
+$radius: 2px !default;
+$padding: 4px !default;
+
+/****	Cool Border 	***/ 
+
+@mixin cool_border($background, $radius, $padding){
+
+    @if $background == 0
+    {
+	background-color: #ffd73a; // Old browsers
+	@include filter-gradient(#ffd73a, #ffa500, vertical); // IE6-8
+	$experimental-support-for-svg: true;// IE9 SVG
+	@include background-image(linear-gradient(top, #ffd73a 0%,#ffa500 100%));
+	@include background-image(linear-gradient(top, $color 0%,darken($color, 8%) 100%));
+    }
+    
+    @else {
+	background-color: $background; // Old browsers
+	@include filter-gradient($background, darken($background, 10%), vertical); // IE6-8
+	$experimental-support-for-svg: true;// IE9 SVG
+	@include background-image(linear-gradient(top, $background 0%,darken($background, 8%) 100%));
+    }
+
+    @if $radius == 0
+    {
+        @include border-radius(2px);
+    }
+    @else {
+        @include border-radius($radius);
+    }
+    
+    border:1px solid darken($background, 18%);
+    
+    @include box-shadow(
+						lighten($background, 20%) 0 1px inset,
+						lighten($background, 10%) 0 -2px 5px inset,
+						rgba(0, 0, 0, 0.5) 0 1px 3px
+						);
+	
+	 @if $padding == 0
+    {
+        padding: 4px
+    }
+    @else {
+        padding: $padding;
+    }
+		
+								&:hover{
+				    						@include box-shadow(
+																lighten($background, 20%) 0 1px inset,
+																lighten($background, 10%) 0 -2px 5px inset,
+																lighten($background, 5%) 0 1px 6px
+																);
+	
+	 										border:1px solid darken($background, 15%);
+										}
+										
+}
