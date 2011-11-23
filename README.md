@@ -14,7 +14,7 @@ Example usage
 Include the file `_cool_border_scss` into your project. Make a reference to this file inside your style.scss.
 
 
-	img{@include cool_border(color, border-raidius, padding)}
+	img{@include cool_border(color, border-radius, padding)}
 	
 	img.black{@include cool_border(#222, 2px, 10px)}
 
