@@ -3,7 +3,6 @@ Cool CSS3 Borders v1
 
 A small plugin for Compass to create coll CSS3 Borders with one line of code
 
-Inspired by [jQuery Kill Photoset](https://github.com/chriskalani/Kill-Photoset/blob/master/jquery.killphotoset.js/) 
 
 ![screenshot](http://f.cl.ly/items/2w0p1A3Z3d2v3f0u0F2E/demo.png)
 
